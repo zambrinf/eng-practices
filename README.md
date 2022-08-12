@@ -8,21 +8,25 @@ make it available publicly when possible.
 
 Currently this contains the following documents:
 
-*   [Google's Code Review Guidelines](review/index.md), which are actually two
-    separate sets of documents:
-    *   [The Code Reviewer's Guide](review/reviewer/index.md)
-    *   [The Change Author's Guide](review/developer/index.md)
+- [Google's Code Review Guidelines](review/index.md), which are actually two
+  separate sets of documents:
+  - [The Code Reviewer's Guide](review/reviewer/index.md)
+  - [The Change Author's Guide](review/developer/index.md)
 
 ## Terminology
 
 There is some Google-internal terminology used in some of these documents, which
 we clarify here for external readers:
 
-*   **CL**: Stands for "changelist", which means one self-contained change that
-    has been submitted to version control or which is undergoing code review.
-    Other organizations often call this a "change", "patch", or "pull-request".
-*   **LGTM**: Means "Looks Good to Me". It is what a code reviewer says when
-    approving a CL.
+- **CL**: Stands for "changelist", which means one self-contained change that
+  has been submitted to version control or which is undergoing code review.
+  Other organizations often call this a "change", "patch", or "pull-request".
+- **LGTM**: Means "Looks Good to Me". It is what a code reviewer says when
+  approving a CL.
+
+## Other Languages
+
+- [Português (Brasil)](/translations/pt-br/README.md)
 
 ## License
 
