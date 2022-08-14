@@ -38,3 +38,5 @@ documentos. Veja <https://creativecommons.org/licenses/by/3.0/> para mais
 detalhes.
 
 <a rel="license" href="https://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
+
+#### Tradução de Inglês para Português feita por Felipe Zambrin
