@@ -97,7 +97,7 @@ Isso é feito quando:
 - As mudanças remanescentes são de pouca importância e _não têm_ que serem
   resolvidas pelo desenvolvedor.
 
-O revisor deve especificar qual dessas opções ele quis dizer, se não ficou
+O revisor deve especificar qual dessas opções foi sua intenção, se não ficou
 claro.
 
 LGTM com comentários deve ser especialmente considerado quando o desenvolvedor e

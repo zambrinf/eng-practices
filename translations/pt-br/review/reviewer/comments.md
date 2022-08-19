@@ -1,15 +1,13 @@
 # How to write code review comments
 
-
-
 ## Summary
 
--   Be kind.
--   Explain your reasoning.
--   Balance giving explicit directions with just pointing out problems and
-    letting the developer decide.
--   Encourage developers to simplify code or add code comments instead of just
-    explaining the complexity to you.
+- Be kind.
+- Explain your reasoning.
+- Balance giving explicit directions with just pointing out problems and letting
+  the developer decide.
+- Encourage developers to simplify code or add code comments instead of just
+  explaining the complexity to you.
 
 ## Courtesy
 
@@ -17,7 +15,7 @@ In general, it is important to be
 [courteous and respectful](https://chromium.googlesource.com/chromium/src/+/master/docs/cr_respect.md)
 while also being very clear and helpful to the developer whose code you are
 reviewing. One way to do this is to be sure that you are always making comments
-about the *code* and never making comments about the *developer*. You don't
+about the _code_ and never making comments about the _developer_. You don't
 always have to follow this practice, but you should definitely use it when
 saying something that might otherwise be upsetting or contentious. For example:
 
@@ -32,7 +30,7 @@ threads."
 ## Explain Why {#why}
 
 One thing you'll notice about the "good" example from above is that it helps the
-developer understand *why* you are making your comment. You don't always need to
+developer understand _why_ you are making your comment. You don't always need to
 include this information in your review comments, but sometimes it's appropriate
 to give a bit more explanation around your intent, the best practice you're
 following, or how your suggestion improves code health.
