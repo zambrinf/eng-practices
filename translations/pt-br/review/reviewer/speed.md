@@ -1,144 +1,142 @@
-# Speed of Code Reviews
+# Velocidade das Revisões de Código
 
+## Por Que As Revisões De Código Devem Ser Rápidas? {#why}
 
+**Na Google, nós otimizamos a velocidade em que cada time de desenvolvedores
+podem produzir um produto juntos**, ao invés de otimizar a velocidade que cada
+desenvolvedor escreve código. A velocidade do desenvolvimento individual é
+importante, só não é _tão_ importante quanto a velocidade do time todo.
 
-## Why Should Code Reviews Be Fast? {#why}
+Quando revisões de código são lentas, diversas coisas acontecem:
 
-**At Google, we optimize for the speed at which a team of developers can produce
-a product together**, as opposed to optimizing for the speed at which an
-individual developer can write code. The speed of individual development is
-important, it's just not *as* important as the velocity of the entire team.
+- **A velocidade do time como um todo cai**. Sim, o indivíduo que não responde
+  rapidamente às revisões faz outro trabalho. Entretanto, novas funcionalidades
+  e correções de bugs para o restante do time são atrasadas por dias, semanas,
+  ou meses a cada CL que espera por revisão ou re-revisão.
 
-When code reviews are slow, several things happen:
+- **Desenvolvedores começam a reclamar do processo de revisão de código.** Se um
+  revisor responde somente a cada alguns dias, mas solicita mudanças grandes na
+  CL a cada vez, isso pode ser frustrante e difícil para desenvolvedores.
+  Frequentemente, isso é expressado através de reclamações de quão "rigoroso" o
+  revisor está sendo. Se o revisor pedir as mesmas mudanças substanciais
+  (mudanças que realmente melhoram a saúde do código), mas responder rapidamente
+  todas as vezes que o desenvolvedor faz uma atualização, essas reclamações
+  tendem a desaparecer. **A maioria das reclamações sobre o processo de revisão
+  de código são geralmente resolvidas fazendo o processo ficar mais rápido**.
 
-*   **The velocity of the team as a whole is decreased.** Yes, the individual
-    who doesn't respond quickly to the review gets other work done. However, new
-    features and bug fixes for the rest of the team are delayed by days, weeks,
-    or months as each CL waits for review and re-review.
-*   **Developers start to protest the code review process.** If a reviewer only
-    responds every few days, but requests major changes to the CL each time,
-    that can be frustrating and difficult for developers. Often, this is
-    expressed as complaints about how "strict" the reviewer is being. If the
-    reviewer requests the *same* substantial changes (changes which really do
-    improve code health), but responds *quickly* every time the developer makes
-    an update, the complaints tend to disappear. **Most complaints about the
-    code review process are actually resolved by making the process faster.**
-*   **Code health can be impacted.** When reviews are slow, there is increased
-    pressure to allow developers to submit CLs that are not as good as they
-    could be. Slow reviews also discourage code cleanups, refactorings, and
-    further improvements to existing CLs.
+- **A saúde do código pode ser impactada**. Quando as revisões são lentas,
+  existe um aumento de pressão para permitir desenvolvedores enviar CLs que não
+  são tão boas quanto poderiam ser. Revisões lentas também desencorajam
+  limpezas, refatorações, e outras melhorias para a CL atual.
 
-## How Fast Should Code Reviews Be? {#fast}
+## Quão rápidas as revisões de código precisam ser? {#fast}
 
-If you are not in the middle of a focused task, **you should do a code review
-shortly after it comes in.**
+Se você não estiver focado no meio de uma tarefa, **você deve fazer uma revisão
+de código assim que ela chega**.
 
-**One business day is the maximum time it should take to respond** to a code
-review request (i.e., first thing the next morning).
+**Um dia útil é o máximo de tempo que deve levar para responder** a uma revisão
+de código (isto é, a primeira coisa a se fazer na próxima manhã).
 
-Following these guidelines means that a typical CL should get multiple rounds of
-review (if needed) within a single day.
+Seguir essas instruções significa que uma CL típica deve ter múltiplas rodadas
+de revisão (se necessário) durante um único dia.
 
-## Speed vs. Interruption {#interruption}
+## Velocidade vs. Interrupção {#interruption}
 
-There is one time where the consideration of personal velocity trumps team
-velocity. **If you are in the middle of a focused task, such as writing code,
-don't interrupt yourself to do a code review.**
-Research has shown that it can
-take a long time for a developer to get back into a smooth flow of development
-after being interrupted. So interrupting yourself while coding is actually
-*more* expensive to the team than making another developer wait a bit for a code
-review.
+Existe apenas um caso que levar em consideração a velocidade pessoal supera a
+velocidade do time. **Se você estiver no meio de uma tarefa que requer foco,
+como escrevendo código, não interrompa a si mesmo para fazer revisão de
+código.** Pesquisas mostram que demora um longo tempo para o desenvolvedor
+voltar a um fluxo de desenvolvimento regular após ser interrompido. Então
+interromper a si mesmo enquanto estiver codando é na verdade _mais_ caro ao time
+do que fazer o outro desenvolvedor esperar um pouco por uma revisão de código.
 
-Instead, wait for a break point in your work before you respond to a request for
-review. This could be when your current coding task is completed, after lunch,
-returning from a meeting, coming back from the breakroom, etc.
+Ao invés disso, espere por uma pausa no seu trabalho antes de responder a uma
+requisição de revisão. Isso pode significar quando sua tarefa de código estiver
+completa, depois do almoço, voltando de uma reunião, voltando do banheiro, etc.
 
-## Fast Responses {#responses}
+## Respostas Rápidas {#responses}
 
-When we talk about the speed of code reviews, it is the *response* time that we
-are concerned with, as opposed to how long it takes a CL to get through the
-whole review and be submitted. The whole process should also be fast, ideally,
-but **it's even more important for the *individual responses* to come quickly
-than it is for the whole process to happen rapidly.**
+Quando falamos da velocidade da revisão de código, é sobre o tempo de _resposta_
+que estamos preocupados, ao invés de quanto tempo a CL leva durante todo o
+processo de revisão e submissão. O processo todo também deve ser rápido,
+idealmente, mas **é ainda mais importante que cada _resposta individual_ seja
+rápida do que todo o processo aconteça rapidamente**.
 
-Even if it sometimes takes a long time to get through the entire review
-*process*, having quick responses from the reviewer throughout the process
-significantly eases the frustration developers can feel with "slow" code
-reviews.
+Mesmo que algumas vezes leve um longo tempo para passar por todo o _processo_ de
+revisão, ter respostas rápidas do revisor ao longo do processo alivia a
+frustração que desenvolvedores têm com revisões "lentas".
 
-If you are too busy to do a full review on a CL when it comes in, you can still
-send a quick response that lets the developer know when you will get to it,
-suggest other reviewers who might be able to respond more quickly, or
-[provide some initial broad comments](navigate.md). (Note: none of this means
-you should interrupt coding even to send a response like this&mdash;send the
-response at a reasonable break point in your work.)
+Se você está muito ocupado para fazer uma revisão completa quando chega uma CL,
+você ainda pode enviar uma resposta rápida para o desenvolvedor falando quando
+você vai vê-la, ou sugerir outros revisores que podem estar disponíveis a
+fazerem a revisão mais rapidamente, ou
+[dar alguns comentários gerais iniciais](navigate.md). (Obs: nada disso
+significa que você deve interromper a programação mesmo que seja para responder
+dessa forma - envie a resposta em uma pausa do seu trabalho.)
 
-**It is important that reviewers spend enough time on review that they are
-certain their "LGTM" means "this code meets [our standards](standard.md)."**
-However, individual responses should still ideally be [fast](#fast).
+**É importante que revisores gastem tempo o suficiente em uma revisão para que
+eles estejam certos que seu "LGTM" significa "esse código segue
+[nossos padrões](standard.md)."** Entretanto, respostas individuais idealmente
+ainda precisam ser [rápidas](#fast).
 
-## Cross-Time-Zone Reviews {#tz}
+## Revisões em fusos horários diferentes {#tz}
 
-When dealing with time zone differences, try to get back to the author while
-they have time to respond before the end of their working hours. If they have
-already finished work for the day, then try to make sure your review is done
-before they start work the next day.
+Quando lidando com diferenças de fusos horários, tente dar resposta ao autor
+enquanto ele tem tempo de resolver antes do final do horário de trabalho dele.
+Se ele já terminou o trabalho do dia, tente garantir que sua revisão esteja
+pronta antes do início do trabalho dele do próximo dia.
 
-## LGTM With Comments {#lgtm-with-comments}
+## LGTM com comentários {#lgtm-with-comments}
 
-In order to speed up code reviews, there are certain situations in which a
-reviewer should give LGTM/Approval even though they are also leaving unresolved
-comments on the CL. This is done when either:
+Para acelerar as revisões, há certas situação que o revisor deve dar o
+LGTM/Aprovação mesmo que ele está deixando comentários não resolvidos na CL.
+Isso é feito quando:
 
-*   The reviewer is confident that the developer will appropriately address all
-    the reviewer's remaining comments.
-*   The remaining changes are minor and don't *have* to be done by the
-    developer.
+- O revisor está confiante que o desenvolvedor vai resolver os comentários do
+  revisor apropriadamente.
+- As mudanças remanescentes são de pouca importância e _não têm_ que serem
+  resolvidas pelo desenvolvedor.
 
-The reviewer should specify which of these options they intend, if it is not
-otherwise clear.
+O revisor deve especificar qual dessas opções ele quis dizer, se não ficou
+claro.
 
-LGTM With Comments is especially worth considering when the developer and
-reviewer are in different time zones and otherwise the developer would be
-waiting for a whole day just to get "LGTM, Approval."
+LGTM com comentários deve ser especialmente considerado quando o desenvolvedor e
+o revisor estão em diferentes fusos horários e o desenvolvedor ficaria esperando
+por um dia inteiro só para conseguir um "LGTM, aprovado".
 
-## Large CLs {#large}
+## CLs Grandes {#large}
 
-If somebody sends you a code review that is so large you're not sure when you
-will be able to have time to review it, your typical response should be to ask
-the developer to
-[split the CL into several smaller CLs](../developer/small-cls.md) that build on
-each other, instead of one huge CL that has to be reviewed all at once. This is
-usually possible and very helpful to reviewers, even if it takes additional work
-from the developer.
+Se alguém lhe enviar uma CL que é tão grande que você não tem certeza quando
+terá tempo para revisá-la, sua resposta típica pode ser pedir ao desenvolvedor
+para [dividir a CL em várias CLs menores](../developer/small-cls.md) que são
+construídas sequencialmente, ao invés de uma CL gigante que precisa ser revisada
+de uma vez. Isso geralmente é possível e ajuda os revisores, mesmo que dê
+trabalho adicional ao desenvolvedor.
 
-If a CL *can't* be broken up into smaller CLs, and you don't have time to review
-the entire thing quickly, then at least write some comments on the overall
-design of the CL and send it back to the developer for improvement. One of your
-goals as a reviewer should be to always unblock the developer or enable them to
-take some sort of further action quickly, without sacrificing code health to do
-so.
+Se uma CL _não pode_ ser quebrada em CLs menores, e você não tem tempo para
+revisar tudo rapidamente, pelo menos escreva alguns comentários sobre o design
+geral da CL e envie para o desenvolvedor. Um dos objetivos como revisor é sempre
+tentar destravar o desenvolvedor ou permitir que ele tome alguma atitude
+rapidamente, sem sacrificar a qualidade do código para isso.
 
-## Code Review Improvements Over Time {#time}
+## Melhorias da Revisão de Código com o Tempo {#time}
 
-If you follow these guidelines and you are strict with your code reviews, you
-should find that the entire code review process tends to go faster and faster
-over time. Developers learn what is required for healthy code, and send you CLs
-that are great from the start, requiring less and less review time. Reviewers
-learn to respond quickly and not add unnecessary latency into the review
-process.
-But **don't compromise on
-the [code review standards](standard.md) or quality for an imagined improvement
-in velocity**&mdash;it's not actually going to make anything happen more
-quickly, in the long run.
+Se você seguir essas orientações e você é exigente com suas revisões de código,
+você provavelmente vai perceber que o processo inteiro de revisão de código
+tende a ir cada vez mais rápido com o tempo. Desenvolvedores aprendem o que é
+necessário para um código mais limpo, e enviam CLs que são ótimas desde o
+início, necessitando menos tempo de revisão. Revisores aprendem a responder
+rapidamente e não adicionar latência desnecessária no processo de revisão. Mas
+**não comprometa os [padrões de revisão de código](standard.md) ou a qualidade
+por uma melhoria da velocidade** - isso não vai fazer nada acontecer mais
+rapidamente no longo prazo.
 
-## Emergencies
+## Emergências
 
-There are also [emergencies](../emergencies.md) where CLs must pass through the
-*whole* review process very quickly, and where the quality guidelines would be
-relaxed. However, please see [What Is An Emergency?](../emergencies.md#what) for
-a description of which situations actually qualify as emergencies and which
-don't.
+Também há [emergências](../emergencies.md) onde a CL deve passar por _todo_ o
+processo de revisão muito rapidamente, e onde as exigências de qualidade podem
+ser relaxadas. Porém, por favor veja
+[O que é uma emergência?](../emergencies.md#what) para uma descrição de quais
+situações se qualificam como emergências e quais não.
 
-Next: [How to Write Code Review Comments](comments.md)
+Próxima: [Como escrever comentários de Revisão de Código](comments.md)
