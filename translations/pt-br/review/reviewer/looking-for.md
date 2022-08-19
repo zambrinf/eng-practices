@@ -53,7 +53,7 @@ quando tentarem chamar ou modificar esse código"**.
 Um tipo particular de complexidade é o **over-engineering**, onde
 desenvolvedores fizeram o código mais genérico do que era necessário, ou
 adicionaram funcionalidades que não são necessárias atualmente pelo sistema.
-Revisores devem estar especialmente vigilantes para over-engineering. Encorage
+Revisores devem estar especialmente vigilantes para over-engineering. Encoraje
 desenvolvedores a resolver problemas que eles sabem que precisam ser resolvidos
 _agora_, não problemas que o desenvolvedor especula que _podem_ precisar serem
 resolvidos no futuro. O problema futuro deve ser resolvido quando você puder ver
@@ -135,7 +135,7 @@ ser que cause uma inconsistência local e fique muito confusa.
 Se nenhuma outra regra se aplica, o autor deve manter a consistência com o
 código que já existe.
 
-De qualquer forma, encorage o autor a documentar um bug e adicionar um TODO para
+De qualquer forma, encoraje o autor a documentar um bug e adicionar um TODO para
 limpar o código existente.
 
 ## Documentação
