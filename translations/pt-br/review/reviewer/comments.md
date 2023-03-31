@@ -27,10 +27,10 @@ nenhum benefício real de performance que eu consiga ver. Como não há benefíc
 de performance, é melhor que o código seja single-threaded ao invés de usar
 múltiplas threads."
 
-## Explique por quê {#why}
+## Explique porquê {#why}
 
 Uma coisa que você vai perceber sobre o exemplo "bom" acima é que ele ajuda o
-desenvolvedor entender _por quê_ você está fazendo esse comentário. Você nem
+desenvolvedor entender _porquê_ você está fazendo esse comentário. Você nem
 sempre precisa incluir essa informação nos seus comentários de revisão, mas
 algumas vezes é apropriado dar um pouco mais de explicação sobre sua intenção, a
 melhor prática que você está seguindo, ou como a sugestão melhora a qualidade do
@@ -58,7 +58,7 @@ Lembre que pessoas aprendem por reforço do que eles estão fazendo bem e não s
 que eles podem melhorar. Se você ver coisas que goste em uma CL, comente isso
 também! Exemplos: desenvolvedor limpou um algoritmo bagunçado, fez uma cobertura
 de testes exemplar, ou você como revisor aprendeu algo com a CL. Assim como
-qualquer comentário, inclua [por quê](#why) você gostou de algo, encorajando o
+qualquer comentário, inclua [porquê](#why) você gostou de algo, encorajando o
 desenvolvedor a continuar boas práticas.
 
 ## Aceitando Explicações {#explanations}

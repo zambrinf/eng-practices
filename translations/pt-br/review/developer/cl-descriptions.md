@@ -1,7 +1,5 @@
 # Writing good CL descriptions
 
-
-
 A CL description is a public record of **what** change is being made and **why**
 it was made. It will become a permanent part of our version control history, and
 will possibly be read by hundreds of people other than your reviewers over the
@@ -15,15 +13,15 @@ locate your CL.
 
 ## First Line {#firstline}
 
-*   Short summary of what is being done.
-*   Complete sentence, written as though it was an order.
-*   Follow by empty line.
+- Short summary of what is being done.
+- Complete sentence, written as though it was an order.
+- Follow by empty line.
 
 The **first line** of a CL description should be a short summary of
-*specifically* **what** *is being done by the CL*, followed by a blank line.
+_specifically_ **what** _is being done by the CL_, followed by a blank line.
 This is what appears in version control history summaries, so it should be
 informative enough that future code searchers don't have to read your CL or its
-whole description to understand what your CL actually *did* or how it differs
+whole description to understand what your CL actually _did_ or how it differs
 from other CLs. That is, the first line should stand alone, allowing readers to
 skim through code history much faster.
 
@@ -59,12 +57,12 @@ Even small CLs deserve a little attention to detail. Put the CL in context.
 "Fix bug" is an inadequate CL description. What bug? What did you do to fix it?
 Other similarly bad descriptions include:
 
--   "Fix build."
--   "Add patch."
--   "Moving code from A to B."
--   "Phase 1."
--   "Add convenience functions."
--   "kill weird URLs."
+- "Fix build."
+- "Add patch."
+- "Moving code from A to B."
+- "Phase 1."
+- "Add convenience functions."
+- "kill weird URLs."
 
 Some of those are real CL descriptions. Although short, they do not provide
 enough useful information.
@@ -108,7 +106,7 @@ Example:
 The first line describes what the CL does and how this is a change from the
 past. The rest of the description talks about the specific implementation, the
 context of the CL, that the solution isn't ideal, and possible future direction.
-It also explains *why* this change is being made.
+It also explains _why_ this change is being made.
 
 ### Small CL that needs some context
 
@@ -123,7 +121,7 @@ Example:
 > refactoring tools being worked on currently.
 
 The first sentence describes what's actually being done. The rest of the
-description explains *why* the change is being made and gives the reviewer a lot
+description explains _why_ the change is being made and gives the reviewer a lot
 of context.
 
 ## Generated CL descriptions

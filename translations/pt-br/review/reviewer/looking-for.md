@@ -87,7 +87,7 @@ para comunicar o que o item é ou faz, sem ser tão longo que fica difícil de l
 
 O desenvolvedor escreveu comentários claros em Português compreensível? Todos os
 comentários são realmente necessários? Geralmente comentários são úteis quando
-explicam **por quê** um código existe, e não _o que_ o código está fazendo. Se o
+explicam **porquê** um código existe, e não _o que_ o código está fazendo. Se o
 código não está claro o suficiente para explicar a si mesmo, então o código deve
 ser simplificado. Há algumas exceções (expressões regulares e algoritmos
 complexos geralmente se beneficiam de comentários que explicam o que eles fazem,
@@ -225,7 +225,7 @@ Em uma revisão de código, você deve garantir que:
 - O código tem testes unitários apropriados.
 - Os testes são bem desenvolvidos.
 - O desenvolvedor usou nomes claros para tudo.
-- Comentários são claros e úteis, e em geral explicam _por quê_ ao invés de _o
+- Comentários são claros e úteis, e em geral explicam _porquê_ ao invés de _o
   que_.
 - O código é apropriadamente documentado (geralmente em g3doc).
 - O código segue os guias de estilo.

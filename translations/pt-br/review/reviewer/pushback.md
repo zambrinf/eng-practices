@@ -14,9 +14,9 @@ qualidade do código? Se sim, deixe ele saber que está certo e deixe a questão
 pra trás.
 
 Entretanto, nem sempre os desenvolvedores estão certos. Nesse caso o revisor
-deve explicar melhor porque ele acredita que sua sugestão está correta. Uma boa
+deve explicar melhor porquê ele acredita que sua sugestão está correta. Uma boa
 explicação demonstra um bom entendimento da resposta do desenvolvedor, e dá
-informação adicional sobre porque a mudança está sendo solicitada.
+informação adicional sobre porquê a mudança está sendo solicitada.
 
 Especificamente quando o revisor acredita que sua sugestão vai melhor a
 qualidade do código, ele deve continuar a defender a mudança, se ele acreditar
