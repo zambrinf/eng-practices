@@ -1,140 +1,142 @@
-# Writing good CL descriptions
+# Escrevendo boas descrições de CL
 
-A CL description is a public record of **what** change is being made and **why**
-it was made. It will become a permanent part of our version control history, and
-will possibly be read by hundreds of people other than your reviewers over the
-years.
+A descrição da CL é um registro público de **qual** alteração está sendo feita e
+**porquê** foi feita. Ela vai se tornar parte permanente do nosso histórico de
+controle de versão, e vai possivelmente ser lida por centenas de pessoas além de
+seus revisores durante os anos.
 
-Future developers will search for your CL based on its description. Someone in
-the future might be looking for your change because of a faint memory of its
-relevance but without the specifics handy. If all the important information is
-in the code and not the description, it's going to be a lot harder for them to
-locate your CL.
+Futuros Desenvolvedores vão buscar por sua CL baseados em sua descrição. Alguém
+no futuro pode estar buscando por sua alteração por uma leve memória da sua
+relevância mas sem ter os detalhes à mão. Se toda informação importante está no
+código e não na descrição, vai ser muito mais difícil para eles localizarem sua
+CL.
 
-## First Line {#firstline}
+## Primeira Linha {#firstline}
 
-- Short summary of what is being done.
-- Complete sentence, written as though it was an order.
-- Follow by empty line.
+- Pequeno resumo do que está sendo feito.
+- Sentença completa, escrita como se fosse uma ordem.
+- Seguida por uma linha vazia.
 
-The **first line** of a CL description should be a short summary of
-_specifically_ **what** _is being done by the CL_, followed by a blank line.
-This is what appears in version control history summaries, so it should be
-informative enough that future code searchers don't have to read your CL or its
-whole description to understand what your CL actually _did_ or how it differs
-from other CLs. That is, the first line should stand alone, allowing readers to
-skim through code history much faster.
+A **primeira linha** de uma descrição de CL deve ser um pequeno resumo de **o
+que** _especificamente está sendo feito pela CL_, seguido por uma linha em
+branco. Isso é o que aparecerá no histórico dos resumos do controle de versão,
+então deve ser informativa o suficiente para que futuras pessoas que buscarem o
+código não precisem ler a CL ou toda a sua descrição para entender o que a CL
+realmente _fez_ ou o que a diferencia de outras CLs. Isto é, a primeira linha
+deve ser independente, permitindo leitores passar pelo histórico muito mais
+rápido.
 
-Try to keep your first line short, focused, and to the point. The clarity and
-utility to the reader should be the top concern.
+Tente manter sua primeira linha pequena, focada, e direto ao ponto. A clareza e
+utilidade ao leitor deve ser a principal preocupação.
 
-By tradition, the first line of a CL description is a complete sentence, written
-as though it were an order (an imperative sentence). For example, say
-\"**Delete** the FizzBuzz RPC and **replace** it with the new system." instead
-of \"**Deleting** the FizzBuzz RPC and **replacing** it with the new system."
-You don't have to write the rest of the description as an imperative sentence,
-though.
+Por tradição, a primeira linha da CL é uma sentença completa, escrita como se
+fosse uma ordem (uma sentença imperativa). Por exemplo, diga \"**Excluir** o RPC
+FizzBuzz e **substituir** com o novo sistema." No entendo, você não precisa
+escrever o restante da descrição como uma sentença imperativa.
 
-## Body is Informative {#informative}
+## O corpo é informativo {#informative}
 
-The [first line](#firstline) should be a short, focused summary, while the rest
-of the description should fill in the details and include any supplemental
-information a reader needs to understand the changelist holistically. It might
-include a brief description of the problem that's being solved, and why this is
-the best approach. If there are any shortcomings to the approach, they should be
-mentioned. If relevant, include background information such as bug numbers,
-benchmark results, and links to design documents.
+A [primeira linha](#firstline) deve ser um pequeno e focado resumo, enquanto o
+restante da descrição deve preencher os detalhes e incluir qualquer informação
+adicional que um leitor necessita para entender a alteração holisticamente. Deve
+incluir uma breve descrição do problema que está sendo resolvido, e porquê essa
+foi a melhor abordagem. Se existe alguma deficiência nessa abordagem, elas devem
+ser mencionadas. Se relevante, inclua informações básicas como números de bugs,
+resultados de benchmark, e links para documentos de design.
 
-If you include links to external resources consider that they may not be visible
-to future readers due to access restrictions or retention policies. Where
-possible include enough context for reviewers and future readers to understand
-the CL.
+Se você incluir links para recursos externos considera que eles podem não ser
+visíveis para futuros leitores por restrições de acesso ou políticas de
+retenção. Onde possível inclua contexto o suficiente para revisores e futuros
+leitores entenderem a CL.
 
-Even small CLs deserve a little attention to detail. Put the CL in context.
+Mesmo pequenas CL merecem uma pequena atenção aos detalhes. Coloque a CL no
+contexto.
 
-## Bad CL Descriptions {#bad}
+## Descrições ruims de CL {#bad}
 
-"Fix bug" is an inadequate CL description. What bug? What did you do to fix it?
-Other similarly bad descriptions include:
+"Ajustar bug" é uma descrição inadequada de CL. Qual bug? O que você fez para
+arrumar? Outras descrições ruins incluem:
 
-- "Fix build."
-- "Add patch."
-- "Moving code from A to B."
-- "Phase 1."
-- "Add convenience functions."
-- "kill weird URLs."
+- "Ajustar build."
+- "Adiciona patch."
+- "Movendo código de A para B."
+- "Fase 1."
+- "Adicionar funções convenientes."
+- "Removendo URLs estranhas."
 
-Some of those are real CL descriptions. Although short, they do not provide
-enough useful information.
+Algumas dessas são descrições reais de CLs. Embora pequenas, elas não dão
+informação útil o suficiente.
 
-## Good CL Descriptions {#good}
+## Boas descrições de CL {#good}
 
-Here are some examples of good descriptions.
+Aqui estão algumas descrições boas:
 
-### Functionality change
+### Alteração de funcionalidade
 
-Example:
+Exemplo:
 
-> rpc: remove size limit on RPC server message freelist.
+> rpc: remover o limite de tamanho da lista de mensagens no servidor RPC
 >
-> Servers like FizzBuzz have very large messages and would benefit from reuse.
-> Make the freelist larger, and add a goroutine that frees the freelist entries
-> slowly over time, so that idle servers eventually release all freelist
-> entries.
+> Servidores como FizzBuzz tem grandes mensagens que podem se beneficiar de
+> reúso. Fazer a lista maior, e adicionar uma goroutine que vagorasamente limpa
+> as entradas da lista através do tempo, assim servidores parados eventualmente
+> liberam toda a sua lista de entradas
 
-The first few words describe what the CL actually does. The rest of the
-description talks about the problem being solved, why this is a good solution,
-and a bit more information about the specific implementation.
+As primeira palavras descrevem o que a CL realmente faz. O restante da descrição
+fala sobre o problema sendo resolvido, porque essa é uma boa solução, e um pouco
+mais de informação específica sobre a implementação.
 
-### Refactoring
+### Refatorando
 
-Example:
+Exemplo:
 
-> Construct a Task with a TimeKeeper to use its TimeStr and Now methods.
+> Construir uma Task com um TimeKeeper que usa seus métodos TimeStr e Now.
 >
-> Add a Now method to Task, so the borglet() getter method can be removed (which
-> was only used by OOMCandidate to call borglet's Now method). This replaces the
-> methods on Borglet that delegate to a TimeKeeper.
+> Adicionar um método Now em Task, assim o método getter borglet() pode ser
+> removido (que somente era usado pelo OOMCandidate para chamar o método Now do
+> borglet). Isso substitui os métodos em Borglet e delega para um TimeKeeper.
 >
-> Allowing Tasks to supply Now is a step toward eliminating the dependency on
-> Borglet. Eventually, collaborators that depend on getting Now from the Task
-> should be changed to use a TimeKeeper directly, but this has been an
-> accommodation to refactoring in small steps.
+> Permitindo que Tasks suportem Now é um passo para eliminar a dependência do
+> Borglet. Enventualmente, colaboradores que dependam de pegar o Now da Task
+> devem alterar para usar o TimeKeeper diretamente, mas isso é uma refatoração
+> em pequenos passos.
 >
-> Continuing the long-range goal of refactoring the Borglet Hierarchy.
+> Continuando a meta de longo prazo de refatoração da Hierarquia Borglet.
 
-The first line describes what the CL does and how this is a change from the
-past. The rest of the description talks about the specific implementation, the
-context of the CL, that the solution isn't ideal, and possible future direction.
-It also explains _why_ this change is being made.
+A primeira linha descreve o que a CL faz e como isso foi alterado. O restante da
+descrição fala sobre a implementação específica, o contexto da CL, que a solução
+não é ideal, e possíveis futuras direções. Também explica _porquê_ a mudança
+está sendo feita.
 
-### Small CL that needs some context
+### CL pequena que precisa de contexto
 
-Example:
+Exemplo:
 
-> Create a Python3 build rule for status.py.
+> Criar uma regra de build de Python3 para status.py
 >
-> This allows consumers who are already using this as in Python3 to depend on a
-> rule that is next to the original status build rule instead of somewhere in
-> their own tree. It encourages new consumers to use Python3 if they can,
-> instead of Python2, and significantly simplifies some automated build file
-> refactoring tools being worked on currently.
+> Isso permite que os usuários que já estão usando o Python3 possam depender de
+> uma regra próxima à regra de build original do status, em vez de em algum
+> lugar em sua própria árvore. Isso incentiva novos usuários a utilizarem o
+> Python3, se possível, em vez do Python2, e simplifica significativamente
+> algumas ferramentas automatizadas de refatoração de arquivos de build que
+> estão sendo desenvolvidas atualmente.
 
-The first sentence describes what's actually being done. The rest of the
-description explains _why_ the change is being made and gives the reviewer a lot
-of context.
+A primeira frase descreve o que está sendo feito de fato. O restante da
+descrição explica o _motivo_ da mudança e fornece ao revisor um contexto
+detalhado.
 
-## Generated CL descriptions
+## Descrições de CL geradas automaticamente
 
-Some CLs are generated by tools. Whenever possible, their descriptions should
-also follow the advice here. That is, their first line should be short, focused,
-and stand alone, and the CL description body should include informative details
-that help reviewers and future code searchers understand each CL's effect.
+Alguns CLs são gerados por ferramentas. Sempre que possível, suas descrições
+também devem seguir os conselhos apresentados aqui. Ou seja, a primeira linha
+deve ser curta, focada e independente, e o corpo da descrição do CL deve incluir
+detalhes informativos que ajudem os revisores e futuros pesquisadores de código
+a entender o efeito de cada CL.
 
-## Review the description before submitting the CL
+## Revisar a descrição antes de enviar o CL
 
-CLs can undergo significant change during review. It can be worthwhile to review
-a CL description before submitting the CL, to ensure that the description still
-reflects what the CL does.
+Os CLs podem passar por mudanças significativas durante a revisão. Vale a pena
+revisar a descrição de um CL antes de enviá-lo, para garantir que ela ainda
+reflita o que o CL faz.
 
-Next: [Small CLs](small-cls.md)
+Próximo: [CLs pequenos](small-cls.md)
