@@ -1,92 +1,86 @@
-# How to handle reviewer comments
+# Como lidar com os comentários do revisor
 
+Quando você envia um CL (Changelist) para revisão, é provável que o revisor
+responda com vários comentários sobre o seu CL. Aqui estão algumas coisas úteis
+para saber sobre como lidar com os comentários do revisor.
 
+## Não leve para o lado pessoal {#personal}
 
-When you've sent a CL out for review, it's likely that your reviewer will
-respond with several comments on your CL. Here are some useful things to know
-about handling reviewer comments.
+O objetivo da revisão é manter a qualidade da nossa base de código e dos nossos
+produtos. Quando um revisor faz uma crítica ao seu código, pense nisso como uma
+tentativa de ajudar você, a base de código e o Google, em vez de um ataque
+pessoal contra você ou suas habilidades.
 
-## Don't Take it Personally {#personal}
+Às vezes, os revisores podem ficar frustrados e expressar essa frustração em
+seus comentários. Isso não é uma prática adequada para os revisores, mas como
+desenvolvedor, você deve estar preparado para isso. Pergunte a si mesmo: "Qual é
+a coisa construtiva que o revisor está tentando me comunicar?" e então aja como
+se isso fosse o que eles realmente disseram.
 
-The goal of review is to maintain the quality of our codebase and our products.
-When a reviewer provides a critique of your code, think of it as their attempt
-to help you, the codebase, and Google, rather than as a personal attack on you
-or your abilities.
+**Nunca responda com raiva aos comentários da revisão de código.** Isso é uma
+séria violação da etiqueta profissional e ficará registrado para sempre na
+ferramenta de revisão de código. Se estiver muito irritado ou incomodado para
+responder com gentileza, afaste-se do computador por um tempo ou trabalhe em
+outra coisa até se sentir calmo o suficiente para responder de forma educada.
 
-Sometimes reviewers feel frustrated and they express that frustration in their
-comments. This isn't a good practice for reviewers, but as a developer you
-should be prepared for this. Ask yourself, "What is the constructive thing that
-the reviewer is trying to communicate to me?" and then operate as though that's
-what they actually said.
+Em geral, se um revisor não está fornecendo feedback de maneira construtiva e
+educada, explique isso a eles pessoalmente. Se não puder falar com eles
+pessoalmente ou por chamada de vídeo, envie-lhes um e-mail privado. Explique de
+maneira gentil o que você não gosta e o que gostaria que eles fizessem de
+maneira diferente. Se eles também responderem de forma não construtiva a essa
+discussão privada, ou se isso não tiver o efeito desejado, então recorra ao seu
+gerente, conforme apropriado.
 
-**Never respond in anger to code review comments.** That is a serious breach of
-professional etiquette that will live forever in the code review tool. If you
-are too angry or annoyed to respond kindly, then walk away from your computer
-for a while, or work on something else until you feel calm enough to reply
-politely.
+## Corrigir o Código {#code}
 
-In general, if a reviewer isn't providing feedback in a way that's constructive
-and polite, explain this to them in person. If you can't talk to them in person
-or on a video call, then send them a private email. Explain to them in a kind
-way what you don't like and what you'd like them to do differently. If they also
-respond in a non-constructive way to this private discussion, or it doesn't have
-the intended effect, then
-escalate to your manager as
-appropriate.
+Se um revisor disser que não entende algo em seu código, sua primeira resposta
+deve ser melhorar o próprio código. Se o código não puder ser melhorado,
+adicione um comentário explicando por que o código está ali. Somente se um
+comentário parecer sem sentido, sua resposta deve ser uma explicação na
+ferramenta de revisão de código.
 
-## Fix the Code {#code}
+Se um revisor não entendeu alguma parte do seu código, é provável que outros
+leitores futuros do código também não entenderão. Responder na ferramenta de
+revisão de código não ajuda os futuros leitores de código, mas esclarecer o seu
+código ou adicionar comentários ajuda.
 
-If a reviewer says that they don't understand something in your code, your first
-response should be to clarify the code itself. If the code can't be clarified,
-add a code comment that explains why the code is there. If a comment seems
-pointless, only then should your response be an explanation in the code review
-tool.
+## Pensar de forma colaborativa {#think}
 
-If a reviewer didn't understand some piece of your code, it's likely other
-future readers of the code won't understand either. Writing a response in the
-code review tool doesn't help future code readers, but clarifying your code or
-adding code comments does help them.
+Escrever um CL pode exigir muito trabalho. É muitas vezes muito satisfatório
+enviar um CL para revisão, sentir que está concluído e ter certeza de que nenhum
+trabalho adicional é necessário. Pode ser frustrante receber comentários pedindo
+mudanças, especialmente se você não concorda com eles.
 
-## Think Collaboratively {#think}
+Nesses momentos, reserve um momento para refletir se o revisor está fornecendo
+feedback valioso que ajudará a base de código e o Google. Sua primeira pergunta
+para si mesmo deve ser sempre: "Eu entendi o que o revisor está pedindo?"
 
-Writing a CL can take a lot of work. It's often really satisfying to finally
-send one out for review, feel like it's done, and be pretty sure that no further
-work is needed. It can be frustrating to receive comments asking for changes,
-especially if you don't agree with them.
+Se você não puder responder a essa pergunta, peça esclarecimentos ao revisor.
 
-At times like this, take a moment to step back and consider if the reviewer is
-providing valuable feedback that will help the codebase and Google. Your first
-question to yourself should always be, "Do I understand what the reviewer is
-asking for?"
+E então, se você entender os comentários, mas discordar deles, é importante
+pensar de forma colaborativa, não combativa ou defensiva:
 
-If you can't answer that question, ask the reviewer for clarification.
+Ruim: "Não, não vou fazer isso."
 
-And then, if you understand the comments but disagree with them, it's important
-to think collaboratively, not combatively or defensively:
+Bom: "Eu escolhi a opção X por causa [desses prós/contras] com [essas
+compensações]. Minha compreensão é que usar Y seria pior por causa [dessas
+razões]. Você está sugerindo que Y atende melhor às compensações originais, que
+devemos ponderar as compensações de forma diferente ou algo mais?"
 
-Bad: "No, I'm not going to do that."
+Lembre-se, a
+**[cortesia e o respeito](https://chromium.googlesource.com/chromium/src/+/master/docs/cr_respect.md)
+devem ser sempre a primeira prioridade**. Se você discordar do revisor, encontre
+maneiras de colaborar: peça esclarecimentos, discuta prós/contras e explique por
+que seu método é melhor para a base de código, usuários e/ou Google.
 
-Good: "I went with X because of [these pros/cons] with [these
-tradeoffs].
-My understanding is that using Y would be worse because of [these reasons]. Are
-you suggesting that Y better serves the original tradeoffs, that we should weigh
-the tradeoffs differently, or something else?"
+Às vezes, você pode saber algo sobre os usuários, base de código ou CL que o
+revisor desconhece. [Corrija o código](#code) quando apropriado e envolva o
+revisor em uma discussão, fornecendo mais contexto a eles. Geralmente, é
+possível chegar a um consenso entre você e o revisor com base em fatos técnicos
 
-Remember,
-**[courtesy and respect](https://chromium.googlesource.com/chromium/src/+/master/docs/cr_respect.md)
-should always be a first priority**. If you disagree with the reviewer, find
-ways to collaborate: ask for clarifications, discuss pros/cons, and provide
-explanations of why your method of doing things is better for the codebase,
-users, and/or Google.
+## Resolvendo Conflitos {#conflicts}
 
-Sometimes, you might know something about the users, codebase, or CL that the
-reviewer doesn't know. [Fix the code](#code) where appropriate, and engage your
-reviewer in discussion, including giving them more context. Usually you can come
-to some consensus between yourself and the reviewer based on technical facts.
-
-## Resolving Conflicts {#conflicts}
-
-Your first step in resolving conflicts should always be to try to come to
-consensus with your reviewer. If you can't achieve consensus, see
-[The Standard of Code Review](../reviewer/standard.md), which gives principles
-to follow in such a situation.
+Seu primeiro passo para resolver conflitos deve ser sempre tentar chegar a um
+consenso com o revisor. Se não conseguir alcançar um consenso, consulte
+[O Padrão de Revisão de Código](../reviewer/standard.md), que apresenta
+princípios a serem seguidos em tal situação.

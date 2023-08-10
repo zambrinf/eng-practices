@@ -1,79 +1,77 @@
-# Navigating a CL in review
+# Navegando uma CL em Revisão
 
+## Resumo
 
+Agora que você sabe [O que buscar em uma revisão de código](looking-for.md),
+qual é o modo mais eficiente de organizar uma revisão que está espalhada por
+diversos arquivos?
 
-## Summary
+1. A mudança faz sentido? Ela tem uma boa
+   [descrição](../developer/cl-descriptions.md)?
+2. Olhe a parte mais importante da alteração primeiro. Ela foi bem desenvolvida
+   no geral?
+3. Olhe o restante da CL em uma sequência apropriada.
 
-Now that you know [what to look for](looking-for.md), what's the most efficient
-way to manage a review that's spread across multiple files?
+## Passo um: Dê uma olhada ampla na alteração {#step_one}
 
-1.  Does the change make sense? Does it have a good
-    [description](../developer/cl-descriptions.md)?
-2.  Look at the most important part of the change first. Is it well-designed
-    overall?
-3.  Look at the rest of the CL in an appropriate sequence.
+Olhe a [descrição da CL](../developer/cl-descriptions.md) e o que ela faz no
+geral. A mudança faz sentido? Se essa mudança não deveria ter acontecido em
+primeiro lugar, responsa imediatamente com uma explicação do motivo dessa
+alteração não acontecer. Quando você rejeita uma mudança como essa, também é uma
+boa ideia sugerir ao desenvolvedor o que ele deveria ter feito.
 
-## Step One: Take a broad view of the change {#step_one}
+Por exemplo, você pode dizer "Parece que isso deu um bom trabalho, obrigado!
+Entretanto, nós estamos indo numa direção de remover o sistema FooWidget que
+você está modificando aqui, então não quremos fazer nenhuma nova modificação
+agora. Que tal ao invés disso você refatorar nossa nova classe BarWidget?"
 
-Look at the [CL description](../developer/cl-descriptions.md) and what the CL
-does in general. Does this change even make sense? If this change shouldn't have
-happened in the first place, please respond immediately with an explanation of
-why the change should not be happening. When you reject a change like this, it's
-also a good idea to suggest to the developer what they should have done instead.
+Observe que não só o o revisor rejeitou a atual CL e sugeriu uma alternativa,
+como ele fez isso com _cortesia_. Esse tipo de cortesia é importante porque nós
+queremos mostrar respeito como desenvolvedores mesmo quando nós discordamos.
 
-For example, you might say "Looks like you put some good work into this, thanks!
-However, we're actually going in the direction of removing the FooWidget system
-that you're modifying here, and so we don't want to make any new modifications
-to it right now. How about instead you refactor our new BarWidget class?"
+Se você pegar mais do que algumas CLs que representam mudanças que você não quer
+fazer, considere retrabalhar o processo de desenvolvimento do seu time ou o
+processo para contribuidores externo para que exista mais comunicação antes das
+CLs serem escritas. É melhor falar "não" às pessoas antes que elas façam um
+trabalho gigantesco que agora precisa ser jogado fora ou drasticamente refeito.
 
-Note that not only did the reviewer reject the current CL and provide an
-alternative suggestion, but they did it *courteously*. This kind of courtesy is
-important because we want to show that we respect each other as developers even
-when we disagree.
+## Passo dois: Examine as principais partes da CL {#step_two}
 
-If you get more than a few CLs that represent changes you don't want to make,
-you should consider re-working your team's development process or the posted
-process for external contributors so that there is more communication before CLs
-are written. It's better to tell people "no" before they've done a ton of work
-that now has to be thrown away or drastically re-written.
+Busca o arquivo ou os arquivos que são a parte principal da CL. Frequentemente,
+tem um arquivo que tem maior número de alterações lógicas, e é a maior parte da
+CL. Olhe essa principal parte primeiro. Isso ajuda a dar um contexto para todas
+as pequenas partes da CL, e em geral acelera a revisão de código. Se a CL for
+grande demais para você encontrar a parte principal, pergunte ao desenvolvedor o
+que olhar primeiro, ou peça a ele para
+[dividir a CL em múltiplas CLs](../developer/small-cls.md).
 
-## Step Two: Examine the main parts of the CL {#step_two}
+Se você ver grandes problemas de design nessa parte da CL, você deve enviar
+comentários imediatamente, mesmo se você não tiver tempo de revisar o restante
+da CL no momento. De fato, revisar o restante da CL poderia ser uma perda de
+tempo, porque se os problemas de design forem significantes, grande parte do
+código em revisão pode desaparecer e não interessar mais.
 
-Find the file or files that are the "main" part of this CL. Often, there is one
-file that has the largest number of logical changes, and it's the major piece of
-the CL. Look at these major parts first. This helps give context to all of the
-smaller parts of the CL, and generally accelerates doing the code review. If the
-CL is too large for you to figure out which parts are the major parts, ask the
-developer what you should look at first, or ask them to
-[split up the CL into multiple CLs](../developer/small-cls.md).
+Existem duas grandes razões para ser importante enviar esses comentários
+imediatamente:
 
-If you see some major design problems with this part of the CL, you should send
-those comments immediately, even if you don't have time to review the rest of
-the CL right now. In fact, reviewing the rest of the CL might be a waste of
-time, because if the design problems are significant enough, a lot of the other
-code under review is going to disappear and not matter anyway.
+- Desenvolvedores geralmente enviam a CL por email e então imediatamente começam
+  um novo trabalho baseado na CL enquanto estão esperando a revisão. Se existem
+  grandes problemas de design na CL que você está revisando, então também terá
+  retrabalho na próxima CL. Você vai querer pegá-los antes de eles terem feito
+  muito trabalho baseado nesse design problemático.
+- Grandes mudanças de design precisam de mais tempo do que pequenas mudanças.
+  Quase todos desenvolvedores tem prazos; para cumprir esses prazos e ainda ter
+  qualidade no código, o desenvolvedor precisa começar qualquer grande
+  retrabalho na CL o quanto antes.
 
-There are two major reasons it's so important to send these major design
-comments out immediately:
+## Passo três: Olhe o restante da CL em uma sequência apropriada {#step_three}
 
--   Developers often mail a CL and then immediately start new work based on that
-    CL while they wait for review. If there are major design problems in the CL
-    you're reviewing, they're also going to have to re-work their later CL. You
-    want to catch them before they've done too much extra work on top of the
-    problematic design.
--   Major design changes take longer to do than small changes. Developers nearly
-    all have deadlines; in order to make those deadlines and still have quality
-    code in the codebase, the developer needs to start on any major re-work of
-    the CL as soon as possible.
+Uma vez que você confirmou que não há grandes problemas de design na CL como um
+todo, tente imaginar uma sequência lógica para olhar pelos arquivos enquanto
+garanta que você não vai perder nenhum arquivo a ser revisado. Usualmente depois
+de ver os principais arquivos, é mais simples apenas olhar cada arquivo na ordem
+que a ferramente de revisão de código apresenta para você. Algumas vezes também
+é útil ler os testes antes de ler o código principal, porque você tem uma ideia
+do que a mudança se propõe a fazer.
 
-## Step Three: Look through the rest of the CL in an appropriate sequence {#step_three}
-
-Once you've confirmed there are no major design problems with the CL as a whole,
-try to figure out a logical sequence to look through the files while also making
-sure you don't miss reviewing any file. Usually after you've looked through the
-major files, it's simplest to just go through each file in the order that
-the code review tool presents them to you. Sometimes it's also helpful to read the tests
-first before you read the main code, because then you have an idea of what the
-change is supposed to be doing.
-
-Next: [Speed of Code Reviews](speed.md)
+Próxima: [Velocidade das Revisões de Código](speed.md)

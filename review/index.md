@@ -1,70 +1,71 @@
-# Code Review Developer Guide
+# Guia de Revisão De Código Para Desenvolvedores
 
-## Introduction {#intro}
+## Introdução {#intro}
 
-A code review is a process where someone other than the author(s) of a piece of
-code examines that code.
+Revisão de código é o processo que alguém além do(s) autor(es) de um pedaço de
+código examina aquele código.
 
-At Google, we use code review to maintain the quality of our code and products.
+Na Google, nós usamos a revisão de código para manter a qualidade do nosso
+código e produtos.
 
-This documentation is the canonical description of Google's code review
-processes and policies.
+Essa documentação é a descrição canônica dos processos e políticas de revisão de
+código da Google.
 
+Essa página é um resumo do nosso processo de revisão de código. Existem outros
+dois grandes documentos que são parte desse guia:
 
+- **[Como Fazer Uma Revisão de Código](./reviewer/index.md)**: Um guia detalhado
+  para o revisor de código.
+- **[O Guia Do Autor da CL](./developer/index.md)**: Um guia detalhado para os
+  desenvolvedores cujas CLs estão passando por revisão.
 
-This page is an overview of our code review process. There are two other large
-documents that are a part of this guide:
+## O Que Revisores De Código Buscam? {#look_for}
 
--   **[How To Do A Code Review](reviewer/index.md)**: A detailed guide for code
-    reviewers.
--   **[The CL Author's Guide](developer/index.md)**: A detailed guide for
-    developers whose CLs are going through review.
+Revisores de código devem buscar:
 
-## What Do Code Reviewers Look For? {#look_for}
+- **Design**: O código foi bem desenvolvido e é apropriado para o seu sistema?
+- **Funcionalidade**: O código se comporta como a intenção do autor? O código se
+  comporta bem para os seus usuários?
+- **Complexidade**: O código pode ser mais simples? Outro desenvolvedor vai ser
+  capaz de entender e usar facilmente esse código no futuro?
+- **Testes**: O código tem testes automatizados corretos e bem desenvolvidos?
+- **Nomenclatura**: O desenvolvedor escolheu nomes claros para variáveis,
+  classes, métodos, etc.?
+- **Comentários**: Os comentários são claros e úteis?
+- **Estilo**: O código segue nossas
+  [diretrizes de estilo](http://google.github.io/styleguide/)?
+- **Documentação**: O desenvolvedor também atualizou as documentações
+  relevantes?
 
-Code reviews should look at:
+Veja **[Como Fazer Uma Revisão de Código](./reviewer/index.md)** para mais
+informações.
 
--   **Design**: Is the code well-designed and appropriate for your system?
--   **Functionality**: Does the code behave as the author likely intended? Is
-    the way the code behaves good for its users?
--   **Complexity**: Could the code be made simpler? Would another developer be
-    able to easily understand and use this code when they come across it in the
-    future?
--   **Tests**: Does the code have correct and well-designed automated tests?
--   **Naming**: Did the developer choose clear names for variables, classes,
-    methods, etc.?
--   **Comments**: Are the comments clear and useful?
--   **Style**: Does the code follow our
-    [style guides](http://google.github.io/styleguide/)?
--   **Documentation**: Did the developer also update relevant documentation?
+### Escolhendo Os Melhores Revisores {#best_reviewers}
 
-See **[How To Do A Code Review](reviewer/index.md)** for more information.
+Em geral, você vai querer achar os _melhores_ revisores que puder que serão
+capazes de responder à sua revisão dentro de um período razoável de tempo.
 
-### Picking the Best Reviewers {#best_reviewers}
+O melhor revisor é aquele que poderá revisar de maneira minuciosa e correta o
+pedaço de código que você está escrevendo. Isso geralmente significa o(s)
+dono(s) do código, que podem ou não ser as pessoas do arquivo de donos. Algumas
+vezes isso significa pedir para diferentes pessoas revisarem diferentes partes
+da CL.
 
-In general, you want to find the *best* reviewers you can who are capable of
-responding to your review within a reasonable period of time.
+Se uma pessoa ideal não estiver disponível, você pode pelo menos colocá-la em
+cópia na sua alteração.
 
-The best reviewer is the person who will be able to give you the most thorough
-and correct review for the piece of code you are writing. This usually means the
-owner(s) of the code, who may or may not be the people in the OWNERS file.
-Sometimes this means asking different people to review different parts of the
-CL.
+### Revisão Presencial (e Pair Programming) {#in_person}
 
-If you find an ideal reviewer but they are not available, you should at least CC
-them on your change.
+Se você fez pair-programming em um pedaço de código com uma pessoa que é
+qualificada para fazer uma boa revisão de código nele, então aquele pedaço de
+código é considerado revisado.
 
-### In-Person Reviews (and Pair Programming) {#in_person}
+Você também pode fazer revisão de código presencialmente onde o revisor faz
+perguntas e o desenvolvedor da alteração apenas fala quando é solicitado.
 
-If you pair-programmed a piece of code with somebody who was qualified to do a
-good code review on it, then that code is considered reviewed.
+## Veja Também {#seealso}
 
-You can also do in-person code reviews where the reviewer asks questions and the
-developer of the change speaks only when spoken to.
-
-## See Also {#seealso}
-
--   [How To Do A Code Review](reviewer/index.md): A detailed guide for code
-    reviewers.
--   [The CL Author's Guide](developer/index.md): A detailed guide for developers
-    whose CLs are going through review.
+- [Como Fazer Uma Revisão de Código](./reviewer/index.md): Um guia detalhado
+  para o revisor de código.
+- [O Guia Do Autor da CL](./developer/index.md): Um guia detalhado para os
+  desenvolvedores cujas CLs estão passando por revisão.

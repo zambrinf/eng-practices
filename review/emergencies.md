@@ -1,69 +1,66 @@
-# Emergencies
+# Emergências
 
-Sometimes there are emergency CLs that must pass through the entire code review
-process as quickly as
-possible.
+Algumas vezes existem CLs emergenciais que precisam passar pelo processo de
+revisão de código o mais rápido possivel.
 
+## O Que É Uma Emergência? {#what}
 
+Uma CL emergencial pode ser uma **pequena** alteração que: permite um grande
+lançamento continuar ao invés de ser revertido, conserta um bug que está
+afetando significativamente os usuários em produção, lida com uma questão legal
+urgente, fecha uma grande brecha de segurança, etc.
 
-## What Is An Emergency? {#what}
+Em emergências nós realmente nos preocupamos com a velocidade de todo o processo
+de revisão de código, não somente a
+[velocidade de resposta](./reviewer/speed.md). _Somente_ neste caso, o revisor
+deve se preocupar mais com a velocidade da revisão e a corretude do código (isso
+realmente resolve a emergência?) do que qualquer outra coisa. Além disso
+(provavelmente obviamente) essas revisões devem ter prioridade sobre outras
+revisões de código, quando elas chegarem.
 
-An emergency CL would be a **small** change that: allows a major launch to
-continue instead of rolling back, fixes a bug significantly affecting users in
-production, handles a pressing legal issue, closes a major security hole, etc.
+Entretanto, após a emergência ser resolvida você deve olhar novamente as CLs
+emergenciais e [revisá-las minuciosamente](./reviewer/looking-for.md).
 
-In emergencies we really do care about the speed of the entire code review
-process, not just the [speed of response](reviewer/speed.md). In this case
-*only*, the reviewer should care more about the speed of the review and the
-correctness of the code (does it actually resolve the emergency?) than anything
-else. Also (perhaps obviously) such reviews should take priority over all other
-code reviews, when they come up.
+## O Que NÃO É Uma Emergência? {#not}
 
-However, after the emergency is resolved you should look over the emergency CLs
-again and give them a [more thorough review](reviewer/looking-for.md).
+Para deixar claro, os seguintes casos _não_ são emergências:
 
-## What Is NOT An Emergency? {#not}
+- Querer lançar essa semana ao invés da semana seguinte (a não ser que haja um
+  [prazo rígido](#deadlines))
+- O desenvolvedor trabalhou em uma funcionalidade por um longo período e ele
+  quer muito essa CL para dentro.
+- Os revisores são todos de outro fuso horário onde neste momento é noite ou
+  eles estão ausentes fora do local.
+- É final do dia numa sexta-feira e seria ótimo essa CL pra dentro antes de o
+  desenvolvedor sair para o fim-de-semana.
+- Um gerente diz que a revisão precisar estar completa e a CL dentro ainda hoje
+  por causa de um [prazo flexível (não rígido)](#deadlines)
+- Reverter uma CL que está causando falhas nos testes ou quebrando a build.
 
-To be clear, the following cases are *not* an emergency:
+E assim por diante.
 
--   Wanting to launch this week rather than next week (unless there is some
-    actual [hard deadline](#deadlines) for launch such as a partner agreement).
--   The developer has worked on a feature for a very long time and they really
-    want to get the CL in.
--   The reviewers are all in another timezone where it is currently nighttime or
-    they are away on an off-site.
--   It is the end of the day on a Friday and it would just be great to get this
-    CL in before the developer leaves for the weekend.
--   A manager says that this review has to be complete and the CL checked in
-    today because of a [soft (not hard) deadline](#deadlines).
--   Rolling back a CL that is causing test failures or build breakages.
+## O que é um prazo rígido? {#deadlines}
 
-And so on.
+Um prazo rígido é quando **algo desastroso pode acontecer** se você perdê-lo.
+Por exemplo:
 
-## What Is a Hard Deadline? {#deadlines}
+- Enviar sua CL até uma determinada data é necessário por obrigação contratual.
+- Seu produto vai falhar completamente se não for liberado até certa data.
+- Alguns fabricantes de hardware enviam novos hardwares apenas uma vez por ano.
+  Se você perder o prazo para enviar o código a eles, pode ser desastroso,
+  dependendo do tipo de código que você está tentando enviar.
 
-A hard deadline is one where **something disastrous would happen** if you miss
-it. For example:
+Atrasar uma release por uma semana não é desastroso. Perder uma reunião
+importante pode ser desastroso, mas geralmente não é.
 
--   Submitting your CL by a certain date is necessary for a contractual
-    obligation.
--   Your product will completely fail in the marketplace if not released by a
-    certain date.
--   Some hardware manufacturers only ship new hardware once a year. If you miss
-    the deadline to submit code to them, that could be disastrous, depending on
-    what type of code you're trying to ship.
+A maioria dos prazos são flexíveis, não rígidos. Eles representam um desejo para
+a funcionalidade estar pronta até certa data. Eles são importantes, mas você não
+deve sacrificar a saúde do código para mantê-los.
 
-Delaying a release for a week is not disastrous. Missing an important conference
-might be disastrous, but often is not.
-
-Most deadlines are soft deadlines, not hard deadlines. They represent a desire
-for a feature to be done by a certain time. They are important, but you
-shouldn't be sacrificing code health to make them.
-
-If you have a long release cycle (several weeks) it can be tempting to sacrifice
-code review quality to get a feature in before the next cycle. However, this
-pattern, if repeated, is a common way for projects to build up overwhelming
-technical debt. If developers are routinely submitting CLs near the end of the
-cycle that "must get in" with only superficial review, then the team should
-modify its process so that large feature changes happen early in the cycle and
-have enough time for good review.
+Se você tem longos ciclos de release (várias semanas) pode ser tentador
+sacrificar a qualidade da revisão de código para uma funcionalidade estar no
+próximo ciclo. Entretanto, esse padrão, se repetido, é uma forma comum de
+projetos apresentarem dívida técnica muito pesada. Se os desenvolvedores
+rotineiramente estão enviando CLs perto do fim do ciclo elas "devem entrar" com
+revisões superficiais, então o time pode midificar o processo para que grandes
+mudanças aconteçam cedo no ciclo e tenham tempo suficiente para uma boa revisão.

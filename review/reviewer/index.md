@@ -1,17 +1,17 @@
-# How to do a code review
+# Como Fazer Uma Revisão De Código
 
-The pages in this section contain recommendations on the best way to do code
-reviews, based on long experience. All together they represent one complete
-document, broken up into many separate sections. You don't have to read them
-all, but many people have found it very helpful to themselves and their team to
-read the entire set.
+As páginas nessa seção contêm recomendações sobre a melhor maneira de se fazer
+revisão de código, baseando-se em longa experiência. Todas juntas representam um
+documento completo, dividido em várias seções separadas. Você não precisa ler
+todas, mas muitas pessoas acham muito útil para elas mesmas e para seus times
+lerem todo o conteúdo.
 
--   [The Standard of Code Review](standard.md)
--   [What to Look For In a Code Review](looking-for.md)
--   [Navigating a CL in Review](navigate.md)
--   [Speed of Code Reviews](speed.md)
--   [How to Write Code Review Comments](comments.md)
--   [Handling Pushback in Code Reviews](pushback.md)
+- [O Padrão de Revisão de Código](standard.md)
+- [O que buscar em uma revisão de código](looking-for.md)
+- [Navegando uma CL em Revisão](navigate.md)
+- [Velocidade das Revisões de Código](speed.md)
+- [Como escrever comentários de Revisão de Código](comments.md)
+- [Lidando com objeções na Revisão de Código](pushback.md)
 
-See also the [CL Author's Guide](../developer/index.md), which gives detailed
-guidance to developers whose CLs are undergoing review.
+Veja também [O Guia Do Autor da CL](../developer/index.md), o qual dá orientação
+detalhada para desenvolvedores cujas CLs estão passando por revisão.
